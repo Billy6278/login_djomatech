@@ -1,0 +1,30 @@
+# This file contains error messages which are shown to user, when http/https
+# login is used.
+# These messages can be changed to make user interface more friendly, including
+# translations to different languages.
+#
+# Various variables can be used here as well. Most frequently used ones are:
+#	$(error-orig)	- original error message from hotspot
+#	$(ip)		- ip address of a client
+#	$(username)	- username of client trying to log in
+
+# internal-error
+# It should never happen. If it will, error page will be shown
+# displaying this error message (error-orig will describe what has happened)
+
+internal-error = Erreur interne ($(error-orig))
+config-error = Erreur de configuration ($(error-orig))
+not-logged-in = Vous n'êtes pas connecté (IP $(ip))
+ippool-empty = Impossible d'attribuer une adresse IP - Aucune adresse disponible
+shutting-down = Le service Hotspot est en cours d'arrêt
+user-session-limit = Limite de sessions atteinte pour l'utilisateur $(username)
+license-session-limit = Limite de connexions de la licence atteinte ($(error-orig))
+wrong-mac-username = Nom d'utilisateur invalide ($(username)) : cette adresse MAC ne vous appartient pas
+chap-missing = Le navigateur n'a pas transmis la réponse d'authentification (réessayez en activant JavaScript)
+invalid-username = Identifiant ou mot de passe incorrect
+invalid-mac = L'utilisateur $(username) n'est pas autorisé à se connecter depuis cette adresse MAC
+uptime-limit = L'utilisateur $(username) a atteint la limite de temps autorisée
+traffic-limit = L'utilisateur $(username) a atteint la limite de données autorisée
+radius-timeout = Le serveur d'authentification (RADIUS) ne répond pas
+auth-in-progress = Authentification déjà en cours, veuillez réessayer dans un instant
+radius-reply = $(error-orig)

@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+}
+
+.login {
+    padding: 0;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.vertical-form {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    padding: 36px 30px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.form-header .logo {
+    display: block;
+    height: 84px;
+    max-width: 100%;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.form-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 6px;
+    line-height: 1.25;
+}
+
+.form-header .subtitle {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.password-group {
+    position: relative;
+}
+
+.vertical-form input[type='text'],
+.vertical-form input[type='password'] {
+    width: 100%;
+    height: 48px;
+    padding: 12px 16px;
+    font-size: 16px; /* 16px empéche le zoom automatique sur iOS Mobile Safari */
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #2d3748;
+    font-family: inherit;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    background-color: #f8fafc;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.password-group input[type='password'],
+.password-group input[type='text'] {
+    padding-right: 48px !important;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718096;
+    border-radius: 8px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-password:hover {
+    color: #667eea;
+    background-color: rgba(102, 126, 234, 0.08);
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+.toggle-password:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: -2px;
+}
+
+.eye-icon.hidden {
+    display: none !important;
+}
+
+.vertical-form input[type='text']:focus,
+.vertical-form input[type='password']:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.vertical-form input[type='text']::placeholder,
+.vertical-form input[type='password']::placeholder {
+    color: #a0aec0;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.35);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.vertical-form .footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13px;
+}
+
+.vertical-form .footer p {
+    margin: 10px 0;
+    color: #718096;
+}
+
+.vertical-form .footer a,
+.trial-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.vertical-form .footer a:hover,
+.trial-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+ul.notice {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    list-style-position: inside;
+    font-size: 14px;
+    padding: 16px 20px;
+    border-radius: 8px;
+}
+
+ul.notice.errors {
+    background-color: #fed7d7;
+    border: 1px solid #e53e3e;
+    color: #c53030;
+}
+
+ul.notice.success {
+    background-color: #c6f6d5;
+    border: 1px solid #22543d;
+    color: #22543d;
+}
+
+ul.notice li {
+    padding: 4px 0;
+}
+
+.login a,
+.login a:visited {
+    text-decoration: none;
+    color: #667eea;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Tablettes, Mobiles, Paysage)
+   ========================================== */
+
+/* Tablet & Standard Mobile (< 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    .login-container {
+        max-width: 400px;
+    }
+
+    .vertical-form {
+        padding: 30px 24px;
+        border-radius: 14px;
+    }
+
+    .form-header .logo {
+        height: 72px;
+        margin-bottom: 14px;
+    }
+
+    .form-header h1 {
+        font-size: 22px;
+    }
+
+    .form-header .subtitle {
+        font-size: 13px;
+    }
+}
+
+/* Small Mobiles (< 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 12px 10px;
+    }
+
+    .vertical-form {
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .form-header {
+        margin-bottom: 20px;
+    }
+
+    .form-header .logo {
+        height: 60px;
+        margin-bottom: 12px;
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+
+    .form-header .subtitle {
+        font-size: 12.5px;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .vertical-form input[type='text'],
+    .vertical-form input[type='password'],
+    .btn-submit {
+        height: 46px;
+    }
+
+    .btn-submit {
+        font-size: 15px;
+    }
+
+    .vertical-form .footer {
+        margin-top: 18px;
+        font-size: 12px;
+    }
+}
+
+/* Very Small Phones (< 360px) */
+@media (max-width: 360px) {
+    .vertical-form {
+        padding: 20px 14px;
+    }
+
+    .form-header h1 {
+        font-size: 18px;
+    }
+
+    .form-header .logo {
+        height: 50px;
+    }
+}
+
+/* Ecran paysage court (Mobile Landscape / Low Height Screens) */
+@media (max-height: 620px) {
+    body {
+        align-items: flex-start;
+        padding: 16px 10px;
+    }
+
+    .vertical-form {
+        padding: 20px 24px;
+    }
+
+    .form-header {
+        margin-bottom: 16px;
+    }
+
+    .form-header .logo {
+        height: 48px;
+        margin-bottom: 8px;
+    }
+
+    .form-header h1 {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .form-header .subtitle {
+        font-size: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .vertical-form input[type='text'],
+    .vertical-form input[type='password'],
+    .btn-submit {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .vertical-form .footer {
+        margin-top: 12px;
+    }
+}
